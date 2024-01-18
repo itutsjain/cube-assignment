@@ -1,0 +1,93 @@
+/* src/App.css */
+body {
+  margin: 0;
+  font-family: 'Arial', sans-serif;
+  background-color: black; /* Set the background color to black */
+  color: #457f86; /* Set the text color to white */
+}
+
+.header {
+  position: sticky;
+  z-index: 100;
+  padding: 1px;
+  text-align: center;
+  background-color: #1A3C40;
+  color: #FEFBE7;
+  box-shadow: 0 2px 4px rgba(65, 60, 60, 0.5);
+}
+
+.app-container {
+  display: flex;
+  background-color: #FEFBE7;
+}
+
+.genre-list-container {
+  background-color: #DAE5D0;
+  flex: 0 0 calc(30% - 16px); /* Set the width to be 25% of the total page width, subtracting padding */
+  max-height: 100vh;
+  overflow-y: auto;
+  box-sizing: border-box;
+  position: sticky;
+  top: 0;
+}
+
+
+.genre-details-container {
+  max-width: calc(100% - 300px);
+  padding:0% 5%;
+  box-sizing: border-box;
+  overflow-y: auto;
+  align-items: center;
+  text-align: center;
+  flex-direction: column; /* Align items vertically */
+}
+
+.genre-list-container li {
+  width: 100%;
+  padding: 15%;
+  text-align: center;
+  border-bottom: 1px solid #ffff; /* Add a line between genre list options */
+  cursor: pointer;
+  height: 23vh; /* Set each option to take up 23% of the height of the page */
+  box-sizing: border-box; /* Include padding and border in the height calculation */
+}
+
+.genre-list-container li:hover {
+  background-color: #A0BCC2; /* Add a background color on hover for better visibility */
+}
+
+.genre-list-container ul {
+  list-style: none; /* Remove default list styles */
+  padding: 0;
+  margin: 0;
+  text-align: center;
+}
+
+/* Additional styles for the movie grid */
+.movie-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* Fixed grid of 3 items in a row for wider screens */
+  gap: 20px;
+}
+
+.movie-item img {
+  width: 250px;
+  height: 250px;
+  border-radius: 8px;
+  object-fit: fill;
+}
+
+@media screen and (max-width: 650px) {
+  .movie-grid {
+    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr)); /* Responsive grid for screens less than 650px */
+  }
+}
+
+/* Customize the scrollbar for WebKit browsers */
+.genre-list-container::-webkit-scrollbar {
+  width: 6px; /* Set the width of the scrollbar */
+}
+
+.genre-list-container::-webkit-scrollbar-thumb {
+  background-color: #555; /* Set the color of the scrollbar thumb */
+}
